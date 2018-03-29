@@ -2,4 +2,4 @@
 for Nebula-A8
 from DDYW
 
-<font size=5>Enjoy</font>
+<font color=#0099ff size=5>Enjoy</font>
