@@ -1,6 +1,6 @@
 # 鶸的PWN小结
 P.S.实在太菜，所以都很基础，慢慢维护
-##快速开启ftp服务器
+## 快速开启ftp服务器
 
 ```
 python -m SimpleHTTPSerber
