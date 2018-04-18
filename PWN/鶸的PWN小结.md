@@ -55,3 +55,5 @@ if VERBOSE: context.log_level = 'DEBUG'
 
 http://pwn4.fun/2016/11/09/Return-to-dl-resolve/
 这个写的比较清楚
+## shellcraft
+编写shellcode
