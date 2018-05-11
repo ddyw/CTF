@@ -61,11 +61,19 @@ http://pwn4.fun/2016/11/09/Return-to-dl-resolve/
 ## linux保护机制的绕过方法
 
 现代栈溢出利用技术基础：ROP
+
 利用signal机制的ROP技术：SROP
+
 没有binary怎么办：BROP 、dump bin
+
 劫持栈指针：stack pivot
+
 利用动态链接绕过ASLR：ret2dl resolve、fake linkmap
+
 利用地址低12bit绕过ASLR：Partial Overwrite
+
 绕过stack canary：改写指针与局部变量、leak canary、overwrite canary
+
 溢出位数不够怎么办：覆盖ebp，Partial Overwrite
+
 现代栈溢出利用技术基础:ROP
