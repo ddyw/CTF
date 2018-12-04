@@ -97,3 +97,24 @@ char *shellcode = "\x31\xf6\x48\xbb\x2f\x62\x69\x6e\x2f\x2f\x73\x68\x56"
 ## IDA keypatch问题相关
 
 https://github.com/keystone-engine/keypatch/issues/28
+
+## pwn常用工具整理及简单用法
+### 逆向分析
+IDA7.0
+IDA keypatch:https://github.com/keystone-engine/keypatch
+
+### 动态调试
+gdb-peda
+### exp编写
+pwntools
+ELF函数：
+```
+libc = ELF("./libc.so.6")
+sh_loc = libc.search('/bin/sh').next() #查找字符串在elf中的地址
+sys_loc = libc.symbols['system'] #查找函数在elf中的地址
+```
+
+### ROP编写
+ROPchains
+ropper
+
