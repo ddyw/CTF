@@ -16,20 +16,16 @@ import os
 
 VERBOSE = 1
 DEBUG   = 1
-LOCAL   = 0
+LOCAL   = 1
+PIE     = 1
 
-target = 'target'
+target = 'memo_note'
 libc   = []         # 加载指定libc
 break_points = []
 remote_addr = '39.107.33.43'
 remote_port = 13572
 
-def hint(break_points=[]):
-    if LOCAL:
-        out = 'gdb attach ' + str(pwnlib.util.proc.pidof(target)[0])
-        for bp in break_points:
-            out += " -ex 'b *{}'".format(hex(bp))
-        raw_input(out+" -ex 'c'\n" if break_points else out+"\n") 
+
 if libc:
     elf = ELF(libc[0])
     gadget = lambda x: next(elf.search(asm(x, os='linux', arch='amd64')))
@@ -41,13 +37,15 @@ if LOCAL:
     p = process('./'+target)
     if DEBUG:
         out =  'gdb attach ' + str(pwnlib.util.proc.pidof(target)[0])
+        base = 0
+        if PIE:
+            print p.pid
+            base =int(os.popen("pmap {}|awk '{{print $1}}'".format(p.pid)).readlines()[1],16)
         for bp in break_points:
-            out += " -ex 'b *{}'".format(hex(bp))
+            out += " -ex 'b *{}'".format(hex(bp+base))
         raw_input(out+" -ex 'c'\n" if break_points else out+"\n")
 else:
     p = remote(remote_addr,remote_port)
-
-if VERBOSE: context.log_level = 'DEBUG'
 
 ```
 
